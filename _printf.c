@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	int my_printed = 0, error = 0;
 
 	if (format == NULL || *format == '\0')
-		return (-1);
+		return (0);
 
 	va_start(original, format);
 	va_copy(copy, original);
