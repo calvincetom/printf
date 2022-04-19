@@ -8,4 +8,3 @@ Where format contains the string that is printed. As _printf() is variadic funct
 
 The format tags prototype is the following:
 
-%[flags][length]specifier
