@@ -10,10 +10,10 @@
  */
 int _printf(const char *format, ...)
 {
-	int (*pfunc)(va_list, flags_t *);
+	int (*p_func)(va_list, c_flags *);
 	const char *p;
 	va_list arguments;
-	flags_t flags = {0, 0, 0};
+	c_flags flags = {0, 0, 0};
 
 	register int count = 0;
 
@@ -34,9 +34,9 @@ int _printf(const char *format, ...)
 			}
 			while (get_flag(*p, &flags))
 				p++;
-			pfunc = get_print(*p);
-			count += (pfunc)
-				? pfunc(arguments, &flags)
+			p_func = get_print(*p);
+			count += (p_func)
+				? p_func(arguments, &flags)
 				: _printf("%%%c", *p);
 		} else
 			count += _putchar(*p);
